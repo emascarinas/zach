@@ -236,13 +236,20 @@ outline: 4px solid black;
 /*Resume Page Styles */
 
 .resume-image {
-    padding: 40em;
     background-image: url('../assets/resume.png');
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
+
+    width: 100vw;
     max-width: 100%;
     height: auto;
+    min-height: 90vh;
+    padding: 0;
+    overflow-x: auto;
+    background-position: top center;
+    display: block;
+
+
 }
 
 /*Media Page Styles */
@@ -326,6 +333,39 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* Hamburger styles */
+.hamburger {
+  display: none; /* Hide by default */
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3000;
+  margin: 10px auto;
+}
+.hamburger span {
+  display: block;
+  width: 36px;
+  height: 5px;
+  margin: 7px 0;
+  background: #fff;
+  border-radius: 3px;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+  position: relative;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(14px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.5);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-14px) rotate(-45deg);
+}
 
 @media (max-width: 768px) {
   /* Make nav stack cleanly below the title */
@@ -349,6 +389,21 @@ input[type="submit"]:hover {
     font-size: 16px;
     padding: 8px 16px;
   }
+
+  /* --- Added for nav-tabz (subpages) --- */
+  .nav-tabz {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    margin-top: 0;
+    padding: 0;
+  }
+  .nav-tabz a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  /* --- End nav-tabz --- */
 
   /* Make the main title smaller and centered */
   .caption {
@@ -375,32 +430,128 @@ input[type="submit"]:hover {
     padding: 30px 10px;
     background-size: cover;
     background-position: center;
-    min-height: auto;
+    min-height: 60vh;
+    height: auto;
   }
 
   .parallax-caption {
+    box-sizing: border-box;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 100%; /* Ensure it doesn't overflow and paddings are respected */
+    max-width: 100vw;
     font-size: 14px;
     position: relative;
     transform: none;
     margin-top: 20px;
-    padding: 10px;
-    width: 90%;
   }
 
   .textbody, .container {
-    width: 95%;
+    width: 92%;
     font-size: 1em;
     padding: 20px;
   }
 
-  .resume-image, .bg-image {
-    padding: 5em;
-    background-size: cover;
-    background-position: center;
+  .resume-image {
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    min-height: 60vh;
+    padding: 0;
+    overflow-x: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: block;
   }
 
   footer {
     font-size: 0.9em;
     text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    z-index: 3000;
+  }
+  .hamburger span {
+    width: 36px;
+    height: 5px;
+    margin: 7px 0;
+    background: #fff;
+    border-radius: 3px;
+  }
+  .hamburger.open span {
+    background: #fff;
+  }
+  .hamburger.open span:nth-child(1),
+  .hamburger.open span:nth-child(3) {
+    height: 5px;
+  }
+  nav, .nav-tabs, .nav-tabz {
+    display: none;
+  }
+  nav.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    background: rgba(40,46,67,0.98);
+    z-index: 2000;
+    align-items: center;
+    padding: 20px 0 10px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .nav-tabs, .nav-tabz {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .nav-tabs a, .nav-tabz a {
+    font-size: 1rem;
+    padding: 20px 0;
+    width: 100vw;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    background: rgba(30,34,54,0.85);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px #000, 0 1px 0 #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-tabs a:hover, .nav-tabz a:hover {
+    background: #fff;
+    color: #222;
+    text-shadow: none;
+  }
+
+  .caption,
+  .caption span.border,
+  .caption .role,
+  .parallax-caption,
+  .parallax-caption h3,
+  .parallax-caption p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    position: relative;
   }
 }

@@ -27,4 +27,28 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 200); // Match the transition duration
         });
     });
+
+    // Hamburger menu logic
+    const burger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('mainNav');
+    if (burger && navMenu) {
+        burger.addEventListener('click', function() {
+            // Debug print
+            console.log('Hamburger clicked!');
+            navMenu.classList.toggle('active');
+            burger.classList.toggle('open'); // Animate hamburger
+            // TODO: Animate hamburger icon to X
+        });
+        // Close menu when clicking a link (for better UX)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                burger.classList.remove('open');
+            });
+        });
+    }
+    // TODO: Close menu when clicking a link (for better UX)
+    // document.querySelectorAll('nav a').forEach(link => {
+    //     link.addEventListener('click', () => navMenu.classList.remove('active'));
+    // });
 });
