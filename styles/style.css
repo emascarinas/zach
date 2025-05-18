@@ -1,0 +1,406 @@
+/* General Styles */
+body {
+    font-family: Georgia, Times, 'Times New Roman', serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-size: cover;
+    color: #fff;
+    margin-bottom: 50px; /* Added to ensure space for the footer */
+
+}
+
+/* Fade-out transition */
+#page-wrapper {
+    opacity: 0; /* Initial state */
+    transition: opacity 0.2s linear;
+
+}
+
+#page-wrapper.fade-in {
+    opacity: 1;
+}
+
+#page-wrapper.fade-out {
+    opacity: 0;
+}
+
+
+
+/* Header Styles */
+header {
+    background-color: #282E43;
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Added for better text visibility */
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/*  Navigation Styles */
+nav {
+    background-color: transparent;  /* Changed from rgba(0, 0, 0, 0.7) */
+}
+
+.nav-tabs {
+    top: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    transform: translate(0, -700%); /* Adjust for centering */
+    font-size: 25px;
+    margin-top: -170px;
+    z-index: 1000;
+}
+
+.nav-tabz{
+    background-color: #282E43;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.nav-tabz a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 100%);
+    
+}
+
+.nav-tabs a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 100%);
+}
+
+.nav-tabs a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-tabz a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Home Page Image Styles */
+
+.caption {
+    position: absolute;  /* Changed from 'top' to 'absolute' */
+    top: 8%;             /* Changed from bottom: 0 */
+    left: 50%;          /* Center horizontally */
+    transform: translateX(-50%);  /* Center horizontally */
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;  /* Changed from padding-bottom to padding-top */
+    
+
+}
+
+  .caption span.border {
+    color: #fff;
+    padding: 9px;
+    font-size: 90px;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 75%);
+
+  }
+  .caption .role {
+    font-size: 45px; /* smaller size */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-top: 10px;
+}
+
+
+  .caption-2{
+position: relative;
+    bottom: 0;             /* Changed from bottom: 0 */
+    width: 100%;
+    text-align: center;
+    color: #fff;
+
+
+  }
+
+  .caption-2 span.border {
+    color: #ffffff;
+    padding: 9px;
+    font-size: 90px;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+
+  }
+
+.parallax-1, .parallax-2, .parallax-3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  /* Changed from cover to contain */
+    opacity: 0.95;
+    min-height: 100vh; /* full screen height */
+    display: flex;            /* Added to help with content alignment */
+    align-items: center;      /* Added to help with content alignment */
+    justify-content: center;
+}
+.parallax-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 6px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+.parallax-1 {
+    background-image: url(../assets/headshotother1.jpg);
+    background-size: cover;
+    padding: 100px;
+    background-color: #000;
+
+}
+
+.parallax-2{
+    background-image: url(../assets/magicflute-prod-1.jpg);
+background-size: contain;
+background-color: #000;
+outline: 4px solid black;
+
+}
+
+.parallax-3 {
+    background-image: url(../assets/DF-prod-1.jpg);
+    background-size: contain;
+    background-color: #000;
+    outline: 4px solid black;
+
+}
+
+
+
+
+
+
+  .textbody{
+    position: relative;
+    color: #fff;
+    background-color: #282E43;
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    outline: 4px solid black;
+    opacity: 1;
+    
+
+  }
+
+/* Background Image Styles */
+
+.bg-image {
+    outline: 4px solid black;
+    padding: 20em;
+    background-image: url(../assets/production-pic-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Resume Page Styles */
+
+.resume-image {
+    padding: 40em;
+    background-image: url('../assets/resume.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Media Page Styles */
+
+.video-container{
+    text-align: center;
+}
+
+
+
+/* Container Styles */
+.container {
+    color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #282E43;
+    padding: 20px;
+    border-radius: 10px;
+    outline: solid 2px white;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Added for better text visibility */
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Bio Page Styles */
+.description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 5px ;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/*Conact Page Styles */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+  /* Make nav stack cleanly below the title */
+  nav {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    z-index: 10;
+  }
+
+  .nav-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transform: none !important;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .nav-tabs a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  /* Make the main title smaller and centered */
+  .caption {
+    top: 2%;
+    padding: 10px;
+    position: relative;
+    transform: none;
+  }
+
+  .caption span.border {
+    font-size: 32px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .caption .role {
+    font-size: 18px;
+  }
+
+  /* Fix image sections */
+  .parallax-1, .parallax-2, .parallax-3 {
+    background-attachment: scroll;
+    flex-direction: column;
+    padding: 30px 10px;
+    background-size: cover;
+    background-position: center;
+    min-height: auto;
+  }
+
+  .parallax-caption {
+    font-size: 14px;
+    position: relative;
+    transform: none;
+    margin-top: 20px;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .textbody, .container {
+    width: 95%;
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .resume-image, .bg-image {
+    padding: 5em;
+    background-size: cover;
+    background-position: center;
+  }
+
+  footer {
+    font-size: 0.9em;
+    text-align: center;
+  }
+}
